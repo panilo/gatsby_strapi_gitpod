@@ -8,7 +8,7 @@ tasks:
   - name: Create DB
     init: >
       gp await-port 3306 &&
-      mysql -u root -e "CREATE DATABASE `strapi_backend`;" &&
+      mysql -u root -e "CREATE DATABASE strapi_backend;" &&
       mysql -e "show databases;" &&
       gp sync-done create-db
 
