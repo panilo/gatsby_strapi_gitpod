@@ -1,37 +1,22 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../components/Layout";
 
 function IndexPage({ data }) {
   return (
-    <>
-      <h1>Products</h1>
+    <Layout pageTitle="Home">
       <ul>
         {data.allStrapiProduct.edges.map((productEdge) => {
           return <li key={productEdge.node.id}>{productEdge.node.name}</li>;
         })}
       </ul>
-      <hr />
-      <h1>Categories</h1>
-      <ul>
-        {data.allStrapiCategory.edges.map((categoryEdge) => (
-          <li key={categoryEdge.node.id}>{categoryEdge.node.name}</li>
-        ))}
-      </ul>
-    </>
+    </Layout>
   );
 }
 
 export const dataQuery = graphql`
   query IndexQuery {
     allStrapiProduct {
-      edges {
-        node {
-          id
-          name
-        }
-      }
-    }
-    allStrapiCategory {
       edges {
         node {
           id

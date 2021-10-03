@@ -21,6 +21,9 @@
       "via": "categories",
       "collection": "product",
       "dominant": true
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
