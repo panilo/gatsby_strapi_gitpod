@@ -25,6 +25,14 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/restaurants/byCategory/:categoryId",
+      "handler": "restaurant.findByCategory",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
       "path": "/restaurants",
       "handler": "restaurant.create",
