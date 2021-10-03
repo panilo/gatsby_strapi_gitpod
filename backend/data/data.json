@@ -1,17 +1,155 @@
 {
   "categories": [
     {
-      "name": "French Food"
+      "id": 1,
+      "name": "Rounded",
+      "products": [{ "id": 1 }, { "id": 8 }]
     },
     {
-      "name": "Brunch"
+      "id": 2,
+      "name": "Squared",
+      "products": [{ "id": 4 }, { "id": 6 }]
+    },
+    {
+      "id": 3,
+      "name": "Trapezoid",
+      "products": [{ "id": 2 }, { "id": 7 }]
     }
   ],
-  "restaurants": [
+  "products": [
     {
-      "name": "Biscotte Restaurant",
-      "description": "Welcome to Biscotte restaurant! Restaurant Biscotte offers a cuisine based on fresh, quality products, often local, organic when possible, and always produced by passionate producers.",
+      "id": 1,
+      "name": "Circle",
+      "description": "Perfectly rounded, suits in every situation",
+      "price": 10.8,
+      "dimensions": "two",
+      "variants": [],
+      "images": [],
+      "categories": [{ "id": 1 }]
+    },
+    {
+      "id": 2,
+      "name": "Triangle",
+      "description": "Triangles are almost old as mathematics, one of the first shape to be studied by the ancient!",
+      "price": 12.3,
+      "dimensions": "two",
+      "variants": [],
+      "images": [],
+      "categories": [{ "id": 3 }]
+    },
+    {
+      "id": 3,
+      "name": "Star",
+      "description": "Sky is full of stars, why not owing one?!",
+      "price": 13.32,
+      "dimensions": "two",
+      "variants": [],
+      "images": [],
+      "categories": []
+    },
+    {
+      "id": 4,
+      "name": "Square",
+      "description": "Nothing better than a square! No compromise",
+      "price": 9.8,
+      "dimensions": "two",
+      "variants": [],
+      "images": [],
       "categories": [{ "id": 2 }]
+    },
+    {
+      "id": 5,
+      "name": "Polygon",
+      "description": "A polygon, many faces all the same",
+      "price": 3.4,
+      "dimensions": null,
+      "variants": [],
+      "images": [],
+      "categories": []
+    },
+    {
+      "id": 6,
+      "name": "Cube",
+      "description": "A cube is the perfect unleash of the powerful square in all the eye-perceptible dimension\n\n",
+      "price": 30.1,
+      "dimensions": "three",
+      "variants": [
+        {
+          "id": 1,
+          "price": 31.98,
+          "description": null,
+          "color": "Red",
+          "images": []
+        },
+        {
+          "id": 2,
+          "price": 35.76,
+          "description": null,
+          "color": "Green",
+          "images": []
+        },
+        {
+          "id": 3,
+          "price": 28.9,
+          "description": null,
+          "color": "Blue",
+          "images": []
+        }
+      ],
+      "images": [],
+      "categories": [{ "id": 2 }]
+    },
+    {
+      "id": 7,
+      "name": "Pyramid",
+      "description": "Were you fascinated by Pyramids? Now you can buy one! ",
+      "price": 50.25,
+      "dimensions": "three",
+      "variants": [],
+      "images": [],
+      "categories": [{ "id": 3 }]
+    },
+    {
+      "id": 8,
+      "name": "Sphere",
+      "description": "Just a perfect sphere wherever you'll look at it",
+      "price": 167.32,
+      "dimensions": "three",
+      "variants": [],
+      "images": [],
+      "categories": [{ "id": 1 }]
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "username": "Mickey Mouse",
+      "email": "mickeymouse@mm.dy",
+      "provider": "local",
+      "confirmed": true,
+      "blocked": false,
+      "role": { "id": 1 }
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "status": "submitted",
+      "user": { "id": 1 },
+      "total": 21.8,
+      "items": [
+        { "id": 1, "variant": "Red", "product": { "id": 6 }, "price": 11.8 },
+        { "id": 2, "variant": null, "product": { "id": 8 }, "price": 10 }
+      ]
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "street": "Mickey Mouse Street",
+      "city": "DisneyLand",
+      "country": "Ireland",
+      "user": { "id": 1 }
     }
   ]
 }

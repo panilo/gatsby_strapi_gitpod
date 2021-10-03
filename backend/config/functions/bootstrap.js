@@ -10,7 +10,13 @@
  * See more details here: https://strapi.io/documentation/developer-docs/latest/setup-deployment-guides/configurations.html#bootstrap
  */
 
-const { categories, restaurants } = require("../../data/data.json");
+const {
+  categories,
+  products,
+  users,
+  orders,
+  addresses,
+} = require("../../data/data.json");
 
 // Is the first run?
 async function isFirstRun() {
@@ -75,23 +81,11 @@ async function createEntry({ model, entry, files }) {
   }
 }
 
-// Import categories
-async function importCategories() {
+// Create an entity for each element in the input array
+async function importEntites(elements, model) {
   return Promise.all(
-    categories.map((category) => {
-      return createEntry({ model: "category", entry: category });
-    })
-  );
-}
-
-// Import restaurants
-async function importRestaurants() {
-  return Promise.all(
-    restaurants.map((restaurant) => {
-      return createEntry({
-        model: "restaurant",
-        entry: restaurant,
-      });
+    elements.map((element) => {
+      return createEntry({ model: model, entry: element });
     })
   );
 }
@@ -100,13 +94,18 @@ async function importRestaurants() {
 async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
-    restaurant: ["find", "findone"],
     category: ["find", "findone"],
+    product: ["find", "findone"],
+    order: ["find", "findone"],
+    address: ["find", "findone"],
   });
 
   // Create all entries
-  await importCategories();
-  await importRestaurants();
+  await importEntites(categories, "category");
+  await importEntites(products, "product");
+  await importEntites(users, "plugins::users-permissions.user");
+  await importEntites(orders, "order");
+  await importEntites(addresses, "address");
 }
 
 module.exports = async () => {

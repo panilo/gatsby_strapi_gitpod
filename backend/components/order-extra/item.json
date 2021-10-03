@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_order_extra_items",
+  "info": {
+    "name": "Item",
+    "icon": "equals",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "model": "product"
+    },
+    "variant": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

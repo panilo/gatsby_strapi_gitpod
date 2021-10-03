@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_product_extra_variant",
+  "info": {
+    "name": "Variant",
+    "icon": "football-ball",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": ["Red", "Green", "Blue"],
+      "required": true
+    }
+  }
+}

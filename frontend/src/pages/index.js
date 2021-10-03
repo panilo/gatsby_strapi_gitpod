@@ -4,19 +4,17 @@ import { graphql } from "gatsby";
 function IndexPage({ data }) {
   return (
     <>
-      <h1>Restuarants</h1>
+      <h1>Products</h1>
       <ul>
-        {data.allStrapiRestaurant.edges.map((nodeRestaurant) => {
-          return (
-            <li key={nodeRestaurant.node.id}>{nodeRestaurant.node.name}</li>
-          );
+        {data.allStrapiProduct.edges.map((productEdge) => {
+          return <li key={productEdge.node.id}>{productEdge.node.name}</li>;
         })}
       </ul>
       <hr />
       <h1>Categories</h1>
       <ul>
-        {data.allStrapiCategory.edges.map((nodeCategory) => (
-          <li key={nodeCategory.node.id}>{nodeCategory.node.name}</li>
+        {data.allStrapiCategory.edges.map((categoryEdge) => (
+          <li key={categoryEdge.node.id}>{categoryEdge.node.name}</li>
         ))}
       </ul>
     </>
@@ -24,8 +22,8 @@ function IndexPage({ data }) {
 }
 
 export const dataQuery = graphql`
-  query MyQuery {
-    allStrapiRestaurant {
+  query IndexQuery {
+    allStrapiProduct {
       edges {
         node {
           id

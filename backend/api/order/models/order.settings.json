@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "submitted",
+        "processing",
+        "sent",
+        "completed"
+      ]
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order-extra.item"
+    },
+    "total": {
+      "type": "float",
+      "required": true
+    }
+  }
+}
