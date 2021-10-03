@@ -12,8 +12,8 @@ tasks:
       mysql -e "show databases;" &&
       gp sync-done create-db
 
-  - name: Start all
-    command: gp sync-await create-db && npm run start-all && gp sync-done start-all
+  - name: Develop all
+    command: gp sync-await create-db && npm run develop-all
 
 image:
   file: .gitpod.dockerfile
