@@ -6,7 +6,7 @@
     "install:frontend": "cd frontend && npm install",
     "install:backend": "cd backend && npm install",
     "install-all": "npm-run-all -l -p install:*",
-    "develop:frontend": "cd frontend && npm run develop",
+    "develop:frontend": "wait-on http://localhost:1337/admin && cd frontend && npm run develop",
     "develop:backend": "cd backend && npm run develop",
     "develop-all": "npm-run-all -l -p develop:*",
     "start:frontend": "wait-on http://localhost:1337/admin && cd frontend && npm run start",
