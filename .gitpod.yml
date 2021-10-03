@@ -3,7 +3,10 @@ tasks:
     init: npm install && gp sync-done install-min-dep
 
   - name: Install all npm dependencies
-    init: gp sync-await install-min-dep && npm run install-all
+    init: |
+      gp sync-await install-min-dep &&
+      npm run install-all &&
+      gp sync-done install-all
 
   - name: Create DB
     init: >
@@ -13,7 +16,10 @@ tasks:
       gp sync-done create-db
 
   - name: Develop all
-    command: gp sync-await create-db && npm run develop-all
+    command: |
+      gp sync-await create-db &&
+      gp sync-await install-all &&
+      npm run develop-all
 
 image:
   file: .gitpod.dockerfile
