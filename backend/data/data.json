@@ -3,17 +3,20 @@
     {
       "id": 1,
       "name": "Rounded",
-      "products": [{ "id": 1 }, { "id": 8 }]
+      "products": [{ "id": 1 }, { "id": 8 }],
+      "slug": "rounded"
     },
     {
       "id": 2,
       "name": "Squared",
-      "products": [{ "id": 4 }, { "id": 6 }]
+      "products": [{ "id": 4 }, { "id": 6 }],
+      "slug": "squared"
     },
     {
       "id": 3,
       "name": "Trapezoid",
-      "products": [{ "id": 2 }, { "id": 7 }]
+      "products": [{ "id": 2 }, { "id": 7 }],
+      "slug": "trapezoid"
     }
   ],
   "products": [
