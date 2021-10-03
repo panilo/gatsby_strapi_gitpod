@@ -13,8 +13,6 @@ tasks:
       gp await-port 3306 &&
       mysql -u root -e "CREATE DATABASE strapi_backend;" &&
       mysql -e "show databases;" &&
-      mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';" &&
-      mysql -e "FLUSH PRIVILEGES;" &&
       gp sync-done create-db
 
   - name: Develop all
