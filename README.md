@@ -1,6 +1,6 @@
 # Debug config
 
-To be places in `{projectRootFolder}/.vscode/launch.json`
+To be placed in `{projectRootFolder}/.vscode/launch.json`
 
 ```json
 {
