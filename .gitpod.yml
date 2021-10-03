@@ -1,6 +1,6 @@
 tasks:
   - name: Install npm dependencies
-    init: npm install-all
+    init: npm run install-all
 
   - name: Create DB
     init: >
