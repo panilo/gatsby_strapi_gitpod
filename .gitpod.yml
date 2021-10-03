@@ -1,0 +1,27 @@
+tasks:
+  - name: Install npm dependencies
+    init: npm install-all
+
+  - name: Create DB
+    init: >
+      gp await-port 3306 &&
+      mysql -u root -e "CREATE DATABASE `strapi_backend` /*!40100 COLLATE 'latin1_swedish_ci' */;" &&
+      mysql -e "show databases;" &&
+      gp sync-done create-db
+
+  - name: Start all
+    command: gp await-sync create-db && npm run start-all && gp sync-done start-all
+
+image:
+  file: .gitpod.dockerfile
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+    visibility: public
+  - port: 3306
+    onOpen: ignore
+    visibility: private
+  - port: 1337
+    onOpen: open-preview
+    visibility: private

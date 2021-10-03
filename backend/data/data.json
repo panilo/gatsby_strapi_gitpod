@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "name": "French Food"
+    },
+    {
+      "name": "Brunch"
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "Biscotte Restaurant",
+      "description": "Welcome to Biscotte restaurant! Restaurant Biscotte offers a cuisine based on fresh, quality products, often local, organic when possible, and always produced by passionate producers.",
+      "categories": [{ "id": 2 }]
+    }
+  ]
+}
